@@ -8,17 +8,35 @@
 // }
 
 const App = () => {
+  const profiles = [
+    {
+      name: "Taro",
+      age: 10
+    },
+    {
+      name: "Hanako"
+    }
+  ];
+
   return (
     <div>
-      <Cat />
+      {
+        profiles.map((profile, index) => {
+          return <User name={profile.name} age={profile.age} key={index} />
+        })
+      }
     </div>
   );
 }
 
-const Cat = () => {
+const User = (props) => {
   return (
-    <div>Meow!</div>
+    <div>Hi! I am {props.name}, and {props.age} years old!</div>
   )
+}
+
+User.defaultProps = {
+  age: 1
 }
 
 export default App;
