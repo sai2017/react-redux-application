@@ -12,11 +12,11 @@ class Counter extends Component {
     }
   }
 
-  hundlePlusButton = () => {
+  hundlePlusButton() {
     this.setState({count: this.state.count + 1});
   }
 
-  hundleMinusButton = () => {
+  hundleMinusButton() {
     this.setState({count: this.state.count - 1});
   }
 
@@ -24,8 +24,8 @@ class Counter extends Component {
     return(
       <>
         <div>count: {this.state.count}</div>
-        <button onClick={this.hundlePlusButton}>+</button>
-        <button onClick={this.hundleMinusButton}>-</button>
+        <button onClick={() => {this.hundlePlusButton()}}>+</button>
+        <button onClick={() => {this.hundleMinusButton()}}>-</button>
       </>
     )
   };
