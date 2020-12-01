@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 // function App() {
 //   return (
 //     <>
@@ -35,8 +37,9 @@ const User = (props) => {
   )
 }
 
-User.defaultProps = {
-  age: 1
+User.propTypes = {
+  name: propTypes.string,
+  age: propTypes.number
 }
 
 export default App;
